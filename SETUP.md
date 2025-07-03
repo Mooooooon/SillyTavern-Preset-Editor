@@ -41,7 +41,7 @@
 
 ## 📝 支持的文件格式
 
-此扩展专为AI对话系统的预设文件设计，支持包含以下结构的JSON文件：
+此扩展专为SillyTavern AI对话系统的预设文件设计，支持包含以下结构的JSON文件：
 
 - `temperature`, `frequency_penalty`, `presence_penalty` 等基本参数
 - `prompts` 数组包含提示词配置

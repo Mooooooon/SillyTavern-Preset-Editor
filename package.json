@@ -1,8 +1,36 @@
 {
   "name": "ai-preset-editor",
-  "displayName": "AI预设编辑器",
-  "description": "用于编辑AI对话预设文件的可视化编辑器",
+  "displayName": "SillyTavern预设编辑器",
+  "description": "用于编辑SillyTavern AI对话预设文件的可视化编辑器",
   "version": "1.0.0",
+  "publisher": "Simamiemie",
+  "author": {
+    "name": "Simamiemie",
+    "email": "fourteen2012@live.com"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/Mooooooon/SillyTavern-Preset-Editor#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Mooooooon/SillyTavern-Preset-Editor"
+  },
+  "bugs": {
+    "url": "https://github.com/Mooooooon/SillyTavern-Preset-Editor/issues"
+  },
+  "icon": "icon.png",
+  "keywords": [
+    "sillytavern",
+    "ai",
+    "preset",
+    "json",
+    "editor",
+    "visual",
+    "prompt",
+    "configuration",
+    "ai-assistant",
+    "chat",
+    "roleplay"
+  ],
   "engines": {
     "vscode": "^1.74.0"
   },
@@ -18,17 +46,17 @@
       {
         "command": "presetEditor.openEditor",
         "title": "打开预设编辑器",
-        "category": "AI预设"
+        "category": "SillyTavern预设"
       },
       {
         "command": "presetEditor.jumpToSection",
         "title": "跳转到配置项",
-        "category": "AI预设"
+        "category": "SillyTavern预设"
       },
       {
         "command": "presetEditor.cleanupTempFiles",
         "title": "清理临时文件",
-        "category": "AI预设"
+        "category": "SillyTavern预设"
       }
     ],
     "views": {
@@ -68,7 +96,9 @@
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
-    "watch": "tsc -watch -p ./"
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package",
+    "publish": "vsce publish"
   },
   "devDependencies": {
     "@types/vscode": "^1.74.0",
