@@ -1,0 +1,78 @@
+{
+  "name": "ai-preset-editor",
+  "displayName": "AI预设编辑器",
+  "description": "用于编辑AI对话预设文件的可视化编辑器",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onLanguage:json"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "presetEditor.openEditor",
+        "title": "打开预设编辑器",
+        "category": "AI预设"
+      },
+      {
+        "command": "presetEditor.jumpToSection",
+        "title": "跳转到配置项",
+        "category": "AI预设"
+      },
+      {
+        "command": "presetEditor.cleanupTempFiles",
+        "title": "清理临时文件",
+        "category": "AI预设"
+      }
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "presetNavigator",
+          "name": "预设导航",
+          "when": "presetEditor.active"
+        }
+      ]
+    },
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "presetEditor.openEditor",
+          "when": "resourceExtname == .json",
+          "group": "navigation"
+        }
+      ],
+      "editor/context": [
+        {
+          "command": "presetEditor.openEditor",
+          "when": "resourceExtname == .json",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "presetEditor.openEditor",
+        "key": "ctrl+shift+p",
+        "mac": "cmd+shift+p",
+        "when": "resourceExtname == .json"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "typescript": "^4.9.4"
+  }
+}
